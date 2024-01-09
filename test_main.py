@@ -20,6 +20,7 @@ class FlaskTestCase(unittest.TestCase):
     def test_hello_name(self):
         response = self.app.get('/api/hello/ben')
         self.assertEqual(response.status_code, 200)
+        print(response.json)
         self.assertEqual(response.json, {'hello': 'ben'})
 
     def test_whoami(self):
